@@ -10,7 +10,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Template;
-use Twig\TemplateWrapper
+use Twig\TemplateWrapper;
 
 final class TwigViewTest extends TestCase
 {
