@@ -43,7 +43,7 @@
     {%- endfor -%}
 
     {# Separator, creates a "..." separator to limit the number of items if we are over 3 pages away from the last page #}
-    {%- if end_page < (nb_pages - (3 - 1)) -%}
+    {%- if end_page < (nb_pages - 2) -%}
         {{ block('ellipsis') }}
     {%- endif -%}
 
