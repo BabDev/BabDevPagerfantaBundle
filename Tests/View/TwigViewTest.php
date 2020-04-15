@@ -31,7 +31,9 @@ final class TwigViewTest extends TestCase
         $template = $this->createMock(Template::class);
         $template->expects($this->once())
             ->method('displayBlock')
-            ->willReturn('Twig template');
+            ->willReturnCallback(static function (): string {
+                echo 'Twig template';
+            });
 
         $this->twig->expects($this->once())
             ->method('load')
