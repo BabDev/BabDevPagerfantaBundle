@@ -9,6 +9,7 @@ use Pagerfanta\Pagerfanta;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
+use Twig\Template;
 
 final class TwigViewTest extends TestCase
 {
@@ -26,10 +27,23 @@ final class TwigViewTest extends TestCase
     {
         $options = ['template' => 'test.html.twig'];
 
-        $this->twig->expects($this->once())
-            ->method('render')
-            ->with($options['template'])
+        $template = $this->createMock(Template::class);
+        $template->expects($this->once())
+            ->method('displayBlock')
             ->willReturn('Twig template');
+
+        $this->twig->expects($this->once())
+            ->method('load')
+            ->with($options['template'])
+            ->willReturn(new TemplateWrapper($this->twig, $template));
+
+        $this->twig->expects($this->once())
+            ->method('mergeGlobals')
+            ->willReturn([]);
+
+        $this->twig->expects($this->once())
+            ->method('isDebug')
+            ->willReturn(false);
 
         $this->assertSame(
             'Twig template',
