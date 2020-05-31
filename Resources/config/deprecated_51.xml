@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Deprecated services -->
+        <!-- Updated deprecation element for Symfony 5.1+ -->
+
+        <!-- Pagerfanta Views -->
+        <service id="pagerfanta.view.default_translated" class="BabDev\PagerfantaBundle\View\DefaultTranslatedView" public="false">
+            <argument type="service" id="pagerfanta.view.default" />
+            <argument type="service" id="translator" />
+            <tag name="pagerfanta.view" alias="default_translated" />
+            <deprecated package="babdev/pagerfanta-bundle" version="2.2">The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "default.html.twig" template.</deprecated>
+        </service>
+
+        <service id="pagerfanta.view.semantic_ui_translated" class="BabDev\PagerfantaBundle\View\SemanticUiTranslatedView" public="false">
+            <argument type="service" id="pagerfanta.view.semantic_ui" />
+            <argument type="service" id="translator" />
+            <tag name="pagerfanta.view" alias="semantic_ui_translated" />
+            <deprecated package="babdev/pagerfanta-bundle" version="2.2">The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "semantic_ui.html.twig" template.</deprecated>
+        </service>
+
+        <service id="pagerfanta.view.twitter_bootstrap_translated" class="BabDev\PagerfantaBundle\View\TwitterBootstrapTranslatedView" public="false">
+            <argument type="service" id="pagerfanta.view.twitter_bootstrap" />
+            <argument type="service" id="translator" />
+            <tag name="pagerfanta.view" alias="twitter_bootstrap_translated" />
+            <deprecated package="babdev/pagerfanta-bundle" version="2.2">The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "twitter_bootstrap.html.twig" template.</deprecated>
+        </service>
+
+        <service id="pagerfanta.view.twitter_bootstrap3_translated" class="BabDev\PagerfantaBundle\View\TwitterBootstrap3TranslatedView" public="false">
+            <argument type="service" id="pagerfanta.view.twitter_bootstrap3" />
+            <argument type="service" id="translator" />
+            <tag name="pagerfanta.view" alias="twitter_bootstrap3_translated" />
+            <deprecated package="babdev/pagerfanta-bundle" version="2.2">The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "twitter_bootstrap3.html.twig" template.</deprecated>
+        </service>
+
+        <service id="pagerfanta.view.twitter_bootstrap4_translated" class="BabDev\PagerfantaBundle\View\TwitterBootstrap4TranslatedView" public="false">
+            <argument type="service" id="pagerfanta.view.twitter_bootstrap4" />
+            <argument type="service" id="translator" />
+            <tag name="pagerfanta.view" alias="twitter_bootstrap4_translated" />
+            <deprecated package="babdev/pagerfanta-bundle" version="2.2">The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "twitter_bootstrap4.html.twig" template.</deprecated>
+        </service>
+    </services>
+</container>

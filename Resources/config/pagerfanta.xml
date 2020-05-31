@@ -39,22 +39,8 @@
             <tag name="pagerfanta.view" alias="default" />
         </service>
 
-        <service id="pagerfanta.view.default_translated" class="BabDev\PagerfantaBundle\View\DefaultTranslatedView" public="false">
-            <argument type="service" id="pagerfanta.view.default" />
-            <argument type="service" id="translator" />
-            <tag name="pagerfanta.view" alias="default_translated" />
-            <deprecated>The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "default.html.twig" template.</deprecated>
-        </service>
-
         <service id="pagerfanta.view.semantic_ui" class="Pagerfanta\View\SemanticUiView" public="false">
             <tag name="pagerfanta.view" alias="semantic_ui" />
-        </service>
-
-        <service id="pagerfanta.view.semantic_ui_translated" class="BabDev\PagerfantaBundle\View\SemanticUiTranslatedView" public="false">
-            <argument type="service" id="pagerfanta.view.semantic_ui" />
-            <argument type="service" id="translator" />
-            <tag name="pagerfanta.view" alias="semantic_ui_translated" />
-            <deprecated>The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "semantic_ui.html.twig" template.</deprecated>
         </service>
 
         <service id="pagerfanta.view.twig" class="BabDev\PagerfantaBundle\View\TwigView" public="false">
@@ -67,33 +53,12 @@
             <tag name="pagerfanta.view" alias="twitter_bootstrap" />
         </service>
 
-        <service id="pagerfanta.view.twitter_bootstrap_translated" class="BabDev\PagerfantaBundle\View\TwitterBootstrapTranslatedView" public="false">
-            <argument type="service" id="pagerfanta.view.twitter_bootstrap" />
-            <argument type="service" id="translator" />
-            <tag name="pagerfanta.view" alias="twitter_bootstrap_translated" />
-            <deprecated>The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "twitter_bootstrap.html.twig" template.</deprecated>
-        </service>
-
         <service id="pagerfanta.view.twitter_bootstrap3" class="Pagerfanta\View\TwitterBootstrap3View" public="false">
             <tag name="pagerfanta.view" alias="twitter_bootstrap3" />
         </service>
 
-        <service id="pagerfanta.view.twitter_bootstrap3_translated" class="BabDev\PagerfantaBundle\View\TwitterBootstrap3TranslatedView" public="false">
-            <argument type="service" id="pagerfanta.view.twitter_bootstrap3" />
-            <argument type="service" id="translator" />
-            <tag name="pagerfanta.view" alias="twitter_bootstrap3_translated" />
-            <deprecated>The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "twitter_bootstrap3.html.twig" template.</deprecated>
-        </service>
-
         <service id="pagerfanta.view.twitter_bootstrap4" class="Pagerfanta\View\TwitterBootstrap4View" public="false">
             <tag name="pagerfanta.view" alias="twitter_bootstrap4" />
-        </service>
-
-        <service id="pagerfanta.view.twitter_bootstrap4_translated" class="BabDev\PagerfantaBundle\View\TwitterBootstrap4TranslatedView" public="false">
-            <argument type="service" id="pagerfanta.view.twitter_bootstrap4" />
-            <argument type="service" id="translator" />
-            <tag name="pagerfanta.view" alias="twitter_bootstrap4_translated" />
-            <deprecated>The "%service_id%" service is deprecated and will be removed in BabDevPagerfantaBundle 3.0. Use the "pagerfanta.view.twig" service instead with the "twitter_bootstrap4.html.twig" template.</deprecated>
         </service>
 
         <!-- View Factory -->
