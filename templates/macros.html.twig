@@ -1,5 +1,5 @@
 {%- macro resolve_previous_page_message(options) -%}
-    {%- if options['prev_message'] is defined -%}
+    {%- if options['prev_message'] is empty -%}
         {{- options['prev_message'] -}}
     {%- else -%}
         {{- 'Previous'|trans([], 'pagerfanta') -}}

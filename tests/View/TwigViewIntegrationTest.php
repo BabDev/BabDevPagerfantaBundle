@@ -75,7 +75,10 @@ final class TwigViewIntegrationTest extends TestCase
         $filesystemLoader->addPath(__DIR__.'/../../templates', 'BabDevPagerfanta');
         $filesystemLoader->addPath($path, 'Pagerfanta');
 
-        $this->twig = new Environment(new ChainLoader([new ArrayLoader(['integration.html.twig' => '{{ pagerfanta(pager, options) }}']), $filesystemLoader]));
+        $loader = new ChainLoader(
+            [new ArrayLoader(['integration.html.twig' => '{{ pagerfanta(pager, options) }}']), $filesystemLoader]
+        );
+        $this->twig = new Environment($loader, ['strict_variables' => false]);
         $this->twig->addExtension(new PagerfantaExtension());
         $this->twig->addExtension(new TranslationExtension($this->createTranslator()));
         $this->twig->addRuntimeLoader($this->createRuntimeLoader());
